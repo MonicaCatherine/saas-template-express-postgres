@@ -50,6 +50,18 @@ src/
 
 This template uses schema-based multi-tenancy. Each organization gets its own PostgreSQL schema, providing strong data isolation between tenants.
 
+## Schema Architecture
+
+Each organization gets its own PostgreSQL schema, providing data isolation between tenants. The architecture follows:
+
+- **Public Schema**: Contains shared tables (users, organizations)
+- **Tenant Schema**: Organization-specific data (prefixed with org_{id})
+- **Schema Switching**: Middleware automatically switches PostgreSQL schema based on the authenticated user's organization. When a request comes in:
+  1. Middleware checks the authenticated user
+  2. Identifies user's organization
+  3. Sets appropriate schema (org_{id}) for the database connection
+  4. Subsequent database operations use the correct tenant's schema
+
 ## License
 
 ISC
