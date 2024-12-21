@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Template</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form Container -->
+        <div id="loginFormContainer" class="auth-form">
+            <h2>Login</h2>
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <div id="loginError" class="error-message"></div>
+                <button type="submit">Login</button>
+                <div class="auth-link">
+                    Don't have an account? <a href="#" id="signupLink">Sign up</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Organization Creation Container -->
+        <div id="orgCreationContainer" class="auth-form hidden">
+            <h2>Create Organization</h2>
+            <p>Welcome <span id="userEmail"></span>! Please create your organization.</p>
+            <form id="createOrgForm">
+                <div class="form-group">
+                    <input type="text" id="orgName" placeholder="Organization Name" required>
+                </div>
+                <div id="orgError" class="error-message"></div>
+                <button type="submit">Create Organization</button>
+            </form>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="auth-form hidden">
+            <h2>Welcome <span id="userEmail"></span>!</h2>
+            <p>Organization: <span id="organizationName"></span></p>
+            <button id="logoutBtn" type="button">Logout</button>
+        </div>
+    </div>
+
+    <!-- Load JavaScript after DOM is ready -->
+    <script defer src="js/main.js"></script>
+                </form>
+            </div>
+    
+            <!-- Signup Form Container -->
+            <div id="signupFormContainer" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <form id="signupFormElement">
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                    </div>
+                    <div id="signupError" class="error-message"></div>
+                    <button type="submit">Sign Up</button>
+                    <div class="auth-link">
+                        Already have an account? <a href="#" id="loginLink">Login</a>
+                    </div>
+                </form>
+            </div>
+</body>
+</html>
